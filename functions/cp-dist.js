@@ -16,11 +16,10 @@ const getDirectories = source =>
   * Remove the hosting/dist/hosting/browser/{lang}/index.html
   * but only after it's been copied into functions.
   * This is so firebase will use the ssr function
-  * and not serve the index.html file
+  * and not serve the static index.html file
   */
   const baseDir = '../hosting/dist/hosting/browser/';
   const directories = getDirectories(baseDir);
-  console.log(directories);
   const promises = [];
   directories.forEach(dir => {
     promises.push(fs.remove(`${baseDir}${dir}/index.html`));

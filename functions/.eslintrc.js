@@ -21,7 +21,7 @@ module.exports = {
     '/lib/**/*', // Ignore built files.
     '/tests/**/*',
     '/dist/**/*',
-    '/cp-angular.js',
+    '/cp-dist.js',
   ],
   plugins: [
     '@typescript-eslint',
