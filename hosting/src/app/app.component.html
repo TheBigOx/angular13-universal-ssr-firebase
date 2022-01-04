@@ -1,12 +1,3 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -328,7 +319,11 @@
 </div>
 
 <div class="content" role="main">
-  V1 <a routerLink="/test">Test Link</a>
+  <h1 i18n="Hello|Page Heading@@hello">Hello</h1>
+  <a routerLink="/">Home</a>
+  <a routerLink="/test">Test Link</a>
+  <a routerLink="/es">Español</a>
+  <a routerLink="/en">English</a>
 </div>
 
 <router-outlet></router-outlet>
