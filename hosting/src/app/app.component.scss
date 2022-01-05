@@ -1,0 +1,35 @@
+$black: #000000;
+$white: #FFFFFF;
+$blue-grey: #3F4C5C;
+$grey-dark: #444444;
+
+.buttons {
+  display: flex;
+  width:500px;
+  a {
+    position: relative;
+    flex: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    padding: 0 1.25rem;
+    line-height: 2.125rem;
+    font-size: .875rem;
+    font-weight: 400;
+    text-align: center;
+    margin: .125rem;
+    border-radius: .125rem;
+    border: 2px solid $blue-grey;
+    background-color: $blue-grey;
+    color: $white;
+    text-decoration: none;
+    transition: color .125s ease;
+    overflow: hidden;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    &:hover {
+      background-color: $grey-dark;
+    }
+  }
+}
