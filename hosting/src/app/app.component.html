@@ -322,8 +322,13 @@
   <h1 i18n="Hello|Page Heading@@hello">Hello</h1>
   <div class="buttons">
     <a routerLink="/">Home</a>
+    <!--
+      Note that each language here, must be defined
+      in hosting/angular.json and functions/universal.ts
+    -->
     <a href="/es">Español</a>
     <a href="/en">English</a>
+    <a href="/en-AU">English (AU)</a>
     <a routerLink="/test">Test Route</a>
   </div>
 </div>

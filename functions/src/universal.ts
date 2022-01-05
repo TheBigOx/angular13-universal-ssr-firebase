@@ -3,7 +3,7 @@ import * as express from 'express';
 const server = express();
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const universal = require(`${process.cwd()}/dist/hosting/server/main`);
-const locales = ['en', 'es'];
+const locales = ['en', 'es', 'en-AU'];
 
 server.get('/', (req, res) => {
   /**

@@ -22,6 +22,10 @@
           "es": {
             "translation": "./src/_locale/source.es.xlf",
             "baseHref": "/es/"
+          },
+          "en-AU": {
+            "translation": "./src/_locale/source.en-AU.xlf",
+            "baseHref": "/en-AU/"
           }
         }
       },
