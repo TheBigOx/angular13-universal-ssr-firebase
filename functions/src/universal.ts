@@ -3,11 +3,19 @@ import * as express from 'express';
 const server = express();
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const universal = require(`${process.cwd()}/dist/hosting/server/main`);
+const locales = ['en', 'es'];
 
 server.get('/', (req, res) => {
+  /**
+   * TODO - use the Accept-Language request HTTP header
+   * to determin what route to redirect to.
+   * However, ensure that it's a supported language
+   * as defined in locales array above / or default
+   * to english.
+   */
   res.redirect('/en'); // Default to english.
 });
-const locales = ['en', 'es'];
+
 locales.forEach((locale: string) => {
   server.use(`/${locale}`, universal.app(locale));
 });
