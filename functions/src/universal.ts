@@ -1,8 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as express from 'express';
 const server = express();
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-// const universal = require(`${process.cwd()}/dist/hosting/server/main`);
 const locales = ['en', 'es', 'en-AU'];
 
 server.get('/', (req, res) => {
@@ -18,8 +16,9 @@ server.get('/', (req, res) => {
 
 locales.forEach((locale: string) => {
   /**
-   * Must use sperate main server for each language otherwise 
-   * it won't render in the language server side.
+   * Use localized main server otherwise 
+   * it won't render in the language server side, rather
+   * it will render in the default which is English.
    */
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   server.use(`/${locale}`, require(`${process.cwd()}/dist/hosting/server/${locale}/main`).app(locale));
