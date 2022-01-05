@@ -14,7 +14,7 @@
     "build:functions": "npm run --prefix ../functions build",
     "build:all": "npm run build:ssr && npm run copy-to-functions && npm run build:functions",
     "prerender": "ng run hosting:prerender",
-    "copy-to-functions": "npm run --prefix ../functions copy",
+    "copy-to-functions": "npm run --prefix ../functions copy-dist",
     "deploy": "npm run build:all && firebase deploy"
   },
   "private": true,

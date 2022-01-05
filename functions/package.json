@@ -1,7 +1,7 @@
 {
   "name": "functions",
   "scripts": {
-    "copy": "node cp-dist",
+    "copy-dist": "node cp-dist",
     "lint": "eslint --ext .js,.ts .",
     "build": "tsc",
     "serve": "npm run build && firebase emulators:start --only functions",

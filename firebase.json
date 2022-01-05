@@ -22,7 +22,10 @@
         "source": "**",
         "function": "ssr"
       }
-    ]
+    ],
+    "i18n": {
+      "root": "/"
+    }
   },
   "storage": {
     "rules": "storage.rules"
