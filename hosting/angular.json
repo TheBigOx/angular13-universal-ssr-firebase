@@ -124,7 +124,12 @@
             "outputPath": "dist/hosting/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss"
+            "inlineStyleLanguage": "scss",
+            "localize": [
+              "en",
+              "es",
+              "en-AU"
+            ]
           },
           "configurations": {
             "production": {

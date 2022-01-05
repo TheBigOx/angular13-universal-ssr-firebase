@@ -2,7 +2,7 @@ import * as functions from 'firebase-functions';
 import * as express from 'express';
 const server = express();
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const universal = require(`${process.cwd()}/dist/hosting/server/main`);
+// const universal = require(`${process.cwd()}/dist/hosting/server/main`);
 const locales = ['en', 'es', 'en-AU'];
 
 server.get('/', (req, res) => {
@@ -17,7 +17,12 @@ server.get('/', (req, res) => {
 });
 
 locales.forEach((locale: string) => {
-  server.use(`/${locale}`, universal.app(locale));
+  /**
+   * Must use sperate main server for each language otherwise 
+   * it won't render in the language server side.
+   */
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  server.use(`/${locale}`, require(`${process.cwd()}/dist/hosting/server/${locale}/main`).app(locale));
 });
 
 export const ssr = functions.https.onRequest(server);
