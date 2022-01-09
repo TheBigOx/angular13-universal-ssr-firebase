@@ -6,13 +6,11 @@ const server = express();
 const locales = require(join(process.cwd(), '/dist/locales.json'));
 
 server.get('/', (req, res) => {
-  /**
-   * TODO - use the Accept-Language request HTTP header
-   * to determin what route to redirect to.
-   * However, ensure that it's a supported language
-   * as defined in locales array above / or default
-   * to english.
-   */
+  const lang = req.acceptsLanguages(locales);
+  if (lang) {
+    return res.redirect(`/${lang}`);
+  }
+
   res.redirect('/en'); // Default to english.
 });
 

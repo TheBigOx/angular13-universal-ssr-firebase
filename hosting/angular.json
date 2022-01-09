@@ -26,6 +26,10 @@
           "en-AU": {
             "translation": "./src/_locale/source.en-AU.xlf",
             "baseHref": "/en-AU/"
+          },
+          "th": {
+            "translation": "./src/_locale/source.th.xlf",
+            "baseHref": "/th/"
           }
         }
       },
@@ -128,7 +132,8 @@
             "localize": [
               "en",
               "es",
-              "en-AU"
+              "en-AU",
+              "th"
             ]
           },
           "configurations": {
