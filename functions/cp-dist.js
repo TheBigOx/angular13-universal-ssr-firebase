@@ -1,5 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const fs = require('fs-extra')
+const fs = require('fs-extra');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const angular = require('../hosting/angular.json');
+const locales = angular.projects.hosting.architect.server.options.localize;
 
 const getDirectories = source =>
   fs.readdirSync(source, { withFileTypes: true })
@@ -11,6 +14,8 @@ const getDirectories = source =>
   const dest = './dist';
   await fs.remove(dest);
   await fs.copy(src, dest);
+  await fs.remove('./dist/locales.json');
+  await fs.writeFile('./dist/locales.json', JSON.stringify(locales));
 
   /**
   * Remove the hosting/dist/hosting/browser/{lang}/index.html

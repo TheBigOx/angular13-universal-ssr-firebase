@@ -2,7 +2,9 @@ import * as functions from 'firebase-functions';
 import * as express from 'express';
 import { join } from 'path';
 const server = express();
-const locales = ['en', 'es', 'en-AU'];
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const localesJson = require(join(process.cwd(), '/dist/locales.json'));
+const locales = JSON.parse(localesJson);
 
 server.get('/', (req, res) => {
   /**
