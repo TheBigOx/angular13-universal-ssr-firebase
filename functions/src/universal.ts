@@ -3,8 +3,7 @@ import * as express from 'express';
 import { join } from 'path';
 const server = express();
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const localesJson = require(join(process.cwd(), '/dist/locales.json'));
-const locales = JSON.parse(localesJson);
+const locales = require(join(process.cwd(), '/dist/locales.json'));
 
 server.get('/', (req, res) => {
   /**

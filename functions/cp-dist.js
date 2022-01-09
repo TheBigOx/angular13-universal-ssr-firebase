@@ -10,12 +10,12 @@ const getDirectories = source =>
     .map(dirent => dirent.name);
 
 (async () => {
+  await fs.remove('./dist/locales.json');
+  await fs.writeFile('../hosting/dist/locales.json', JSON.stringify(locales));
   const src = '../hosting/dist';
   const dest = './dist';
   await fs.remove(dest);
   await fs.copy(src, dest);
-  await fs.remove('./dist/locales.json');
-  await fs.writeFile('./dist/locales.json', JSON.stringify(locales));
 
   /**
   * Remove the hosting/dist/hosting/browser/{lang}/index.html
